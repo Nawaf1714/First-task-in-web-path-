@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .control-panel {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .control-panel button {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            background-color: #e0e0e0;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .control-panel .forward {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .control-panel .backward {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .control-panel .left {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .control-panel .right {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .control-panel .stop {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            color: #fff;
+        }
+    .last{
+        left: 0px;
+        top: 0px;
+        transform: translate(2.5%, 2.5%);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position:fixed;
+        cursor: pointer;
+        background-color:rgb(7, 249, 169);
+    }
+    </style>
+</head>
+<body>
+    <div class="control-panel">
+        <form action="cntrol.php" method="POST">
+            <button name="dir" type="submit" name="command" value="forward" class="forward">Forward</button>
+            <button name="dir" type="submit" name="command" value="backward" class="backward">Backward</button>
+            <button name="dir" type="submit" name="command" value="left" class="left">Left</button>
+            <button name="dir" type="submit" name="command" value="right" class="right">Right</button>
+            <button name="dir" type="submit" name="command" value="stop" class="stop">Stop</button>
+        </form>
+    </div>
+    <form action="last_movmennt.php">
+        <button class="last" type="submit">last move</button>
+    </form>
+</body>
+</html>
